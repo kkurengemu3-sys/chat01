@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quvo Chat</title>
+  <style>
+    *{box-sizing:border-box}body{font-family:system-ui,sans-serif;background:#eef6ff;color:#17324d;margin:0;min-height:100vh;display:grid;place-items:center;padding:20px}
+    main{background:white;padding:32px;border-radius:22px;max-width:480px;width:100%;box-shadow:0 10px 32px #164c7b18;text-align:center}
+    h1{color:#147fe0}a.button{display:block;background:#147fe0;color:white;text-decoration:none;padding:15px;border-radius:12px;margin:20px 0;font-weight:bold}
+    .note{font-size:13px;color:#64748b;line-height:1.7}footer{font-size:12px;color:#94a3b8;margin-top:26px}
+  </style>
+</head>
+<body><main><h1>Quvo Chat</h1><p>友だちとチャットしよう</p>
+  <p class="note">このページはGitHub Pages用の入口です。チャット本体はGoogle Apps Scriptで動作します。</p>
+  <a id="open" class="button" href="#">チャットを開く</a>
+  <p id="hint" class="note"></p><footer>©QuvoCorporation</footer>
+  <script>
+    // GASデプロイ後、以下を自分のウェブアプリURLに変更してください。
+    const GAS_WEB_APP_URL = '';
+    const a=document.getElementById('open');
+    const hint=document.getElementById('hint');
+    if(/^https:\/\/script\.google\.com\/macros\/s\//.test(GAS_WEB_APP_URL)){
+      a.href=GAS_WEB_APP_URL;
+    }else{
+      a.style.display='none';
+      hint.textContent='管理者がGASウェブアプリURLを設定すると、ここからチャットを開けます。';
+    }
+  </script>
+</main></body></html>
